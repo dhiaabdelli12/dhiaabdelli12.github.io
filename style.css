@@ -19,56 +19,198 @@ body {
 }
 
 .container>h1 {
+    white-space:pre-wrap;
     color: white;
     font-size: 120px;
     opacity: 0%;
-    animation: 2s FadeIn linear forwards;
+    animation: 3s FadeIn linear forwards;
+    transition: all .5s ease-in-out;
 }
 
-.i,
+
+
+.container > .a{
+    position: absolute;
+    left: 30.3%;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.container > .a:hover{
+    opacity: .8;
+}
+
+.i1,
 .l1,
-.l2 {
+.l2,
+.h,
+.i2 {
     position: absolute;
     background-color: white;
     width: 2.22%;
     height: 20%;
+    transition: all .5s ease-in-out;
 }
 
-.i {
+.projects{
+    opacity: 0;
+    color: white;
+    position: absolute;
+    font-size: 12px;
+    left: 43%;
+    top: 58%;
+
+}
+
+.projects.active{
+    animation: 1s FadeIn 1s linear forwards;
+}
+
+.point {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    background-color: white;
+    width: 17px;
+    height: 17px;
+    top: 38%;
+    left: 27.1%;
+    transition: all .5s ease-in-out;
+}
+
+.point:hover {
+    transform: scale(1.4);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.h {
+    background-color: white;
+    width: 2.25%;
+    left: 17.5%;
+    top: 38%;
+    height: 23.2%;
+    animation: 1s extendMove 2s linear forwards;
+}
+
+.name.inactive{
+    color: black;
+}
+
+.h.inactive{
+    opacity: 0;
+}
+
+.i1 {
     top: 44%;
     left: 27.1%;
     height: 17.4%;
+    animation: 1s extend 2s linear forwards;
 }
-.l1{
+
+.i1.inactive{
+    opacity: 0;
+}
+
+.l1 {
     top: 38%;
     height: 23.5%;
     left: 82.9%;
     animation: 1s extend 2s linear forwards;
 }
 
-.l2{
+.l1.inactive{
+    opacity: 0;
+}
+
+.l2 {
     top: 38%;
     height: 23.5%;
-    left:87.3%;
+    left: 87.3%;
     animation: 1s extendMove 2s linear forwards;
 }
 
-@keyframes FadeIn{
-    50%{
+.l2.active{
+    left: 50%;
+    height: 100%;
+    top: 10%;
+    animation: .5s extendWidth .5s linear forwards;
+}
+
+.point.active {
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+}
+
+.point.inactive{
+    opacity: 0;
+}
+
+.point.active>h1 {
+    opacity: 0%;
+    animation: 2s FadeIn linear forwards;
+
+}
+
+
+.i2 {
+    top: 38%;
+    left: 91.6%;
+    height: 23.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+
+}
+
+.i2.active{
+    left: 40%;
+}
+
+
+
+
+.i2>.shape:nth-child(1) {
+    width: 17px;
+    height: 17px;
+    background-color: white;
+}
+.i2>.shape:nth-child(2) {
+    width: 17px;
+    height: 65px;
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+
+
+@keyframes extendWidth {
+    100%{
+        width: 70%;
+    }
+}
+
+@keyframes FadeIn {
+    50% {
         opacity: 30%;
     }
-    100%{
+
+    100% {
         opacity: 100%;
     }
 }
 
 @keyframes extend {
-    100%{
+    100% {
         height: 50%;
     }
 }
+
 @keyframes extendMove {
-    100%{
+    100% {
         top: 20%;
         height: 50%;
     }
