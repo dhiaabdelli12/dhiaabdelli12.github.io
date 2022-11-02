@@ -38,3 +38,11 @@ l.addEventListener('click', () => {
 
 
 
+
+/*window.addEventListener("mousemove", (e) => {
+    let x = e.clientX;
+    let y = e.clientY;
+    text_container.style.backgroundPositionX = `-${x * 0.02}px`;
+    text_container.style.backgroundPositionY = `-${y * 0.02}px`;
+
+});*/

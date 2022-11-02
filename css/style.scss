@@ -1,0 +1,215 @@
+:root {
+    --ft-main-size: 150px;
+    --clr-main: rgb(255, 255, 255);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.text-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    background: radial-gradient(rgb(255, 255, 255, 0.2) 8%,
+            transparent 8%);
+
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+
+    .deepflow {
+        position: absolute;
+        color: var(--clr-main);
+        font-size: var(--ft-main-size);
+        z-index: 4;
+        left: 57%;
+        top: 40%;
+        opacity: 0;
+        z-index: -2;
+        transition: all .5s ease-in-out .5s;
+    }
+
+    .name {
+        color: var(--clr-main);
+        font-size: var(--ft-main-size);
+        white-space: pre-wrap;
+        transition: all .5s ease-in-out;
+        opacity: 1;
+        transition: all .5s ease-in-out;
+    }
+
+    .a {
+        position: absolute;
+        color: var(--clr-main);
+        font-size: var(--ft-main-size);
+        left: 38.2%;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+    .i {
+        position: absolute;
+        font-size: var(--ft-main-size);
+        color: var(--clr-main);
+        left: 75.6%;
+        transition: all .5s ease-in-out;
+    }
+
+
+    .d {
+        position: absolute;
+        color: var(--clr-main);
+        font-size: var(--ft-main-size);
+        left: 23%;
+        cursor: pointer;
+        transition: all .5s ease-in-out .5s;
+    }
+
+
+    .l {
+        position: absolute;
+        background-color: var(--clr-main);
+        top: 42.5%;
+        width: 21.5px;
+        height: 108px;
+        left: 71.1%;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+    }
+
+    .deepflow-box {
+        position: absolute;
+        height: 400px;
+        width: 0px;
+        background-color: var(--clr-main);
+        z-index: 2;
+        left: 5%;
+        transition: all .5s ease-in-out .5s;
+    }
+
+    .about-me {
+        position: absolute;
+        width: 500px;
+        padding: 10px;
+        top: 100%;
+        left: 75%;
+        opacity: 0;
+        transition: all .5s ease-in-out .5s;
+        z-index: -2;
+    }
+
+    .about-me>* {
+        color: var(--clr-main);
+
+    }
+
+
+
+    .about-me-img {
+        position: absolute;
+        width: 200px;
+        height: auto;
+        left: 20%;
+        top: 100%;
+        opacity: 0;
+        transition: all .5s ease-in-out 0.5s;
+    }
+}
+
+.text-container.deepflow {
+    background-position: +5% 0%;
+
+    .deepflow {
+        opacity: 1;
+        top: 25%;
+    }
+
+    .deepflow-box {
+        position: absolute;
+        height: 400px;
+        width: 680px;
+        background-color: var(--clr-main);
+        z-index: 2;
+        left: 5%;
+    }
+
+    .name,
+    .a,
+    .i,
+    .l {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    .d {
+        left: 50%;
+    }
+}
+
+
+.text-container.ai {
+    background-position: -5% 0%;
+
+    .i {
+        left: 43.5%;
+    }
+
+    .name,
+    .d,
+    .l {
+        opacity: 0;
+    }
+
+}
+
+.text-container.scroll {
+    transform: translateY(-60%);
+
+    .l {
+        height: 800px;
+    }
+
+
+    .about-me {
+        left: 34%;
+        opacity: 1;
+    }
+
+    .scroll-box {
+        position: absolute;
+        height: 250px;
+        width: 700px;
+        background-color: black;
+        z-index: 2;
+        top: 100%;
+        left: 72.5%;
+    }
+
+    .about-me-img {
+        opacity: 1;
+    }
+
+}
+
+
+#particles-js {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    z-index: -2;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}

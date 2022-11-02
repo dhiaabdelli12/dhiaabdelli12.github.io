@@ -1,60 +1,187 @@
 :root {
-    --ft-main-size: 150px;
-    --clr-main: rgb(255, 255, 255);
+  --ft-main-size: 150px;
+  --clr-main: rgb(255, 255, 255);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .text-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease-in-out;
-
-
-    /*background: radial-gradient(rgb(255, 255, 255, 0.2) 8%,
-            transparent 8%);
-
-    background-position: 0% 0%;
-    background-size: 5vmin 5vmin;*/
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
 }
-
-#particles-js {
-    position: absolute;
-    width: 100vw;
-    height: auto;
-    z-index: -2;
-    opacity: 0;
-    transition: all .5s ease-in-out;
+.text-container .deepflow {
+  position: absolute;
+  color: var(--clr-main);
+  font-size: var(--ft-main-size);
+  z-index: 4;
+  left: 57%;
+  top: 40%;
+  opacity: 0;
+  z-index: -2;
+  transition: all 0.5s ease-in-out 0.5s;
 }
-
-
+.text-container .name {
+  color: var(--clr-main);
+  font-size: var(--ft-main-size);
+  white-space: pre-wrap;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.text-container .a {
+  position: absolute;
+  color: var(--clr-main);
+  font-size: var(--ft-main-size);
+  left: 38.2%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.text-container .i {
+  position: absolute;
+  font-size: var(--ft-main-size);
+  color: var(--clr-main);
+  left: 75.6%;
+  transition: all 0.5s ease-in-out;
+}
+.text-container .d {
+  position: absolute;
+  color: var(--clr-main);
+  font-size: var(--ft-main-size);
+  left: 23%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.text-container .l {
+  position: absolute;
+  background-color: var(--clr-main);
+  top: 42.5%;
+  width: 21.5px;
+  height: 108px;
+  left: 71.1%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.text-container .deepflow-box {
+  position: absolute;
+  height: 400px;
+  width: 0px;
+  background-color: var(--clr-main);
+  z-index: 2;
+  left: 5%;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.text-container .about-me {
+  position: absolute;
+  width: 500px;
+  padding: 10px;
+  top: 100%;
+  left: 75%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out 0.5s;
+  z-index: -2;
+}
+.text-container .about-me > * {
+  color: var(--clr-main);
+}
+.text-container .about-me-img {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  left: 20%;
+  top: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out 0.5s;
+}
 
 .text-container.deepflow {
-    background-position: +5% 0%;
+  background-position: 5% 0%;
+}
+.text-container.deepflow .deepflow {
+  opacity: 1;
+  top: 25%;
+}
+.text-container.deepflow .deepflow-box {
+  position: absolute;
+  height: 400px;
+  width: 680px;
+  background-color: var(--clr-main);
+  z-index: 2;
+  left: 5%;
+}
+.text-container.deepflow .name,
+.text-container.deepflow .a,
+.text-container.deepflow .i,
+.text-container.deepflow .l {
+  opacity: 0;
+  transform: translateY(-30%);
+}
+.text-container.deepflow .d {
+  left: 50%;
 }
 
 .text-container.ai {
-    background-position: -5% 0%;
+  background-position: -5% 0%;
+}
+.text-container.ai .i {
+  left: 43.5%;
+}
+.text-container.ai .name,
+.text-container.ai .d,
+.text-container.ai .l {
+  opacity: 0;
 }
 
+.text-container.scroll {
+  transform: translateY(-60%);
+}
+.text-container.scroll .l {
+  height: 800px;
+}
+.text-container.scroll .about-me {
+  left: 34%;
+  opacity: 1;
+}
+.text-container.scroll .scroll-box {
+  position: absolute;
+  height: 250px;
+  width: 700px;
+  background-color: black;
+  z-index: 2;
+  top: 100%;
+  left: 72.5%;
+}
+.text-container.scroll .about-me-img {
+  opacity: 1;
+}
 
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  z-index: -2;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
 
-
-.name {
+/*.name {
     color: var(--clr-main);
     font-size: var(--ft-main-size);
     white-space: pre-wrap;
@@ -102,16 +229,15 @@ body {
     transition: all .5s ease-in-out;
 
 }
-
-.text-container.scroll>.l {
+*/
+/*.text-container.scroll>.l {
     height: 800px;
 }
 
 .text-container.scroll {
     transform: translateY(-60%);
-}
-
-.text-container.ai>.i {
+}*/
+/*.text-container.ai>.i {
     left: 43.5%;
 }
 
@@ -119,16 +245,15 @@ body {
 .text-container.ai>.d,
 .text-container.ai>.l {
     opacity: 0;
-}
-
-
-
-.text-container.deepflow>.deepflow {
+}*/
+/*.text-container.deepflow {
+    background-position: +5% 0%;
+}*/
+/*.text-container.deepflow>.deepflow {
     opacity: 1;
     top: 25%;
-}
-
-.text-container.deepflow>.name,
+}*/
+/*.text-container.deepflow>.name,
 .text-container.deepflow>.a,
 .text-container.deepflow>.i,
 .text-container.deepflow>.l {
@@ -138,10 +263,16 @@ body {
 
 .text-container.deepflow>.d {
     left: 50%;
-}
-
-
-.text-container>.deepflow {
+}*/
+/*.text-container.deepflow>.deepflow-box {
+    position: absolute;
+    height: 400px;
+    width: 680px;
+    background-color: var(--clr-main);
+    z-index: 2;
+    left: 5%;
+}*/
+/*.text-container>.deepflow {
     position: absolute;
     color: var(--clr-main);
     font-size: var(--ft-main-size);
@@ -151,12 +282,8 @@ body {
     opacity: 0;
     z-index: -2;
     transition: all .5s ease-in-out .5s;
-}
-
-
-
-
-.text-container.scroll>.about-me {
+}*/
+/*.text-container.scroll>.about-me {
     left: 34%;
     opacity: 1;
 }
@@ -171,17 +298,8 @@ body {
     left: 72.5%;
 }
 
-
-.text-container.deepflow>.deepflow-box {
-    position: absolute;
-    height: 400px;
-    width: 680px;
-    background-color: var(--clr-main);
-    z-index: 2;
-    left: 5%;
-}
-
-.text-container>.deepflow-box {
+*/
+/*.text-container>.deepflow-box {
     position: absolute;
     height: 400px;
     width: 0px;
@@ -217,8 +335,9 @@ body {
     top: 100%;
     opacity: 0;
     transition: all .5s ease-in-out 0.5s;
-}
-
-.text-container.scroll>.about-me-img {
+}*/
+/*.text-container.scroll>.about-me-img {
     opacity: 1;
-}
+}*/
+
+/*# sourceMappingURL=style.css.map */
