@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in 0s;
   background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
   background-position: 0% 0%;
   background-size: 5vmin 5vmin;
@@ -36,15 +36,22 @@ body {
   top: 40%;
   opacity: 0;
   z-index: -2;
-  transition: all 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+.text-container .name,
+.text-container .a,
+.text-container .i,
+.text-container .l,
+.text-container .d {
+  transition: all 0.5s ease-in-out;
 }
 .text-container .name {
   color: var(--clr-main);
   font-size: var(--ft-main-size);
   white-space: pre-wrap;
-  transition: all 0.5s ease-in-out;
   opacity: 1;
-  transition: all 0.5s ease-in-out;
+  -webkit-animation: 1s show forwards;
+          animation: 1s show forwards;
 }
 .text-container .a {
   position: absolute;
@@ -52,14 +59,12 @@ body {
   font-size: var(--ft-main-size);
   left: 38.2%;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
 }
 .text-container .i {
   position: absolute;
   font-size: var(--ft-main-size);
   color: var(--clr-main);
   left: 75.6%;
-  transition: all 0.5s ease-in-out;
 }
 .text-container .d {
   position: absolute;
@@ -67,7 +72,6 @@ body {
   font-size: var(--ft-main-size);
   left: 23%;
   cursor: pointer;
-  transition: all 0.5s ease-in-out 0.5s;
 }
 .text-container .l {
   position: absolute;
@@ -77,15 +81,63 @@ body {
   height: 108px;
   left: 71.1%;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+}
+.text-container .ai-box {
+  position: absolute;
+  height: 400px;
+  width: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2;
+  left: 100%;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.text-container .ai-box .ai-box-img {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  border-radius: 5px;
+  top: 25%;
+  left: -5%;
+}
+.text-container .ai-box > * {
+  color: white;
+}
+.text-container .ai-box h1 {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+}
+.text-container .ai-box p {
+  position: absolute;
+  left: 32%;
+  top: 35%;
+}
+.text-container .ai-box button {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
 }
 .text-container .deepflow-box {
   position: absolute;
   height: 400px;
   width: 0px;
-  background-color: var(--clr-main);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 2;
-  left: 5%;
+  left: -10%;
   transition: all 0.5s ease-in-out 0.5s;
 }
 .text-container .about-me {
@@ -115,14 +167,13 @@ body {
   background-position: 5% 0%;
 }
 .text-container.deepflow .deepflow {
-  opacity: 1;
   top: 25%;
+  opacity: 1;
 }
 .text-container.deepflow .deepflow-box {
   position: absolute;
   height: 400px;
   width: 680px;
-  background-color: var(--clr-main);
   z-index: 2;
   left: 5%;
 }
@@ -130,8 +181,8 @@ body {
 .text-container.deepflow .a,
 .text-container.deepflow .i,
 .text-container.deepflow .l {
-  opacity: 0;
   transform: translateY(-30%);
+  opacity: 0;
 }
 .text-container.deepflow .d {
   left: 50%;
@@ -139,6 +190,10 @@ body {
 
 .text-container.ai {
   background-position: -5% 0%;
+}
+.text-container.ai .ai-box {
+  width: 600px;
+  left: 50%;
 }
 .text-container.ai .i {
   left: 43.5%;
@@ -181,163 +236,36 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-/*.name {
-    color: var(--clr-main);
-    font-size: var(--ft-main-size);
-    white-space: pre-wrap;
-    transition: all .5s ease-in-out;
-    opacity: 1;
-    transition: all .5s ease-in-out;
-}
-
-.a {
-    position: absolute;
-    color: var(--clr-main);
-    font-size: var(--ft-main-size);
-    left: 38.2%;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-}
-
-.i {
-    position: absolute;
-    font-size: var(--ft-main-size);
-    color: var(--clr-main);
-    left: 75.6%;
-    transition: all .5s ease-in-out;
-}
-
-
-.d {
-    position: absolute;
-    color: var(--clr-main);
-    font-size: var(--ft-main-size);
-    left: 23%;
-    cursor: pointer;
-    transition: all .5s ease-in-out .5s;
-}
-
-
-.l {
-    position: absolute;
-    background-color: var(--clr-main);
-    top: 42.5%;
-    width: 21.5px;
-    height: 108px;
-    left: 71.1%;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-
-}
-*/
-/*.text-container.scroll>.l {
-    height: 800px;
-}
-
-.text-container.scroll {
-    transform: translateY(-60%);
-}*/
-/*.text-container.ai>.i {
-    left: 43.5%;
-}
-
-.text-container.ai>.name,
-.text-container.ai>.d,
-.text-container.ai>.l {
+@media only screen and (max-width: 412px) {
+  .text-container .ai-box {
     opacity: 0;
-}*/
-/*.text-container.deepflow {
-    background-position: +5% 0%;
-}*/
-/*.text-container.deepflow>.deepflow {
-    opacity: 1;
-    top: 25%;
-}*/
-/*.text-container.deepflow>.name,
-.text-container.deepflow>.a,
-.text-container.deepflow>.i,
-.text-container.deepflow>.l {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-
-.text-container.deepflow>.d {
-    left: 50%;
-}*/
-/*.text-container.deepflow>.deepflow-box {
-    position: absolute;
-    height: 400px;
-    width: 680px;
-    background-color: var(--clr-main);
-    z-index: 2;
-    left: 5%;
-}*/
-/*.text-container>.deepflow {
-    position: absolute;
-    color: var(--clr-main);
-    font-size: var(--ft-main-size);
-    z-index: 4;
-    left: 57%;
-    top: 40%;
-    opacity: 0;
-    z-index: -2;
-    transition: all .5s ease-in-out .5s;
-}*/
-/*.text-container.scroll>.about-me {
-    left: 34%;
-    opacity: 1;
-}
-
-.text-container.scroll>.scroll-box {
-    position: absolute;
-    height: 250px;
-    width: 700px;
-    background-color: black;
-    z-index: 2;
-    top: 100%;
-    left: 72.5%;
-}
-
-*/
-/*.text-container>.deepflow-box {
-    position: absolute;
-    height: 400px;
-    width: 0px;
-    background-color: var(--clr-main);
-    z-index: 2;
-    left: 5%;
-    transition: all .5s ease-in-out .5s;
-}
-
-.about-me {
-    position: absolute;
-    width: 500px;
-    padding: 10px;
-    top: 100%;
-    left: 75%;
-    opacity: 0;
-    transition: all .5s ease-in-out .5s;
-    z-index: -2;
-}
-
-.about-me>* {
-    color: var(--clr-main);
-
-}
-
-
-
-.about-me-img {
-    position: absolute;
-    width: 200px;
-    height: auto;
+  }
+  .text-container .name {
     left: 20%;
-    top: 100%;
-    opacity: 0;
-    transition: all .5s ease-in-out 0.5s;
-}*/
-/*.text-container.scroll>.about-me-img {
-    opacity: 1;
-}*/
-
-/*# sourceMappingURL=style.css.map */
+    top: 40%;
+  }
+  .text-container .name,
+.text-container .d,
+.text-container .i,
+.text-container .a {
+    position: absolute;
+    font-size: 200px;
+  }
+  .text-container .d {
+    left: 27%;
+    top: 40%;
+  }
+  .text-container .a {
+    top: 40%;
+    left: 105%;
+  }
+  .text-container .l {
+    top: 86.5%;
+    left: 145%;
+    transform: scale(120%);
+  }
+  .text-container .i {
+    left: 160%;
+    top: 64.5%;
+  }
+}/*# sourceMappingURL=style.css.map */

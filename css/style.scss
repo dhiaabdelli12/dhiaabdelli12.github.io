@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in 0s;
     background: radial-gradient(rgb(255, 255, 255, 0.2) 8%,
             transparent 8%);
 
@@ -38,16 +38,25 @@ body {
         top: 40%;
         opacity: 0;
         z-index: -2;
-        transition: all .5s ease-in-out .5s;
+        transition: all .5s ease-in-out;
     }
+
+
+    .name,
+    .a,
+    .i,
+    .l,
+    .d {
+        transition: all .5s ease-in-out;
+    }
+
 
     .name {
         color: var(--clr-main);
         font-size: var(--ft-main-size);
         white-space: pre-wrap;
-        transition: all .5s ease-in-out;
         opacity: 1;
-        transition: all .5s ease-in-out;
+        animation: 1s show forwards;
     }
 
     .a {
@@ -56,7 +65,6 @@ body {
         font-size: var(--ft-main-size);
         left: 38.2%;
         cursor: pointer;
-        transition: all .5s ease-in-out;
     }
 
     .i {
@@ -64,7 +72,6 @@ body {
         font-size: var(--ft-main-size);
         color: var(--clr-main);
         left: 75.6%;
-        transition: all .5s ease-in-out;
     }
 
 
@@ -74,7 +81,7 @@ body {
         font-size: var(--ft-main-size);
         left: 23%;
         cursor: pointer;
-        transition: all .5s ease-in-out .5s;
+
     }
 
 
@@ -86,17 +93,71 @@ body {
         height: 108px;
         left: 71.1%;
         cursor: pointer;
-        transition: all .5s ease-in-out;
 
+    }
+
+    .ai-box {
+        position: absolute;
+        height: 400px;
+        width: 0;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 2;
+        left: 100%;
+        transition: all .5s ease-in-out .5s;
+
+        .ai-box-img {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            border-radius: 5px;
+            top: 25%;
+            left: -5%;
+        }
+
+        &>* {
+            color: white;
+        }
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 40%;
+        }
+
+        p {
+            position: absolute;
+            left: 32%;
+            top: 35%;
+        }
+
+        button {
+            position: absolute;
+            right: 5%;
+            bottom: 10%;
+            padding: 10px;
+            color: white;
+            background-color: black;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+        }
     }
 
     .deepflow-box {
         position: absolute;
         height: 400px;
         width: 0px;
-        background-color: var(--clr-main);
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(20px);
         z-index: 2;
-        left: 5%;
+        left: -10%;
         transition: all .5s ease-in-out .5s;
     }
 
@@ -116,8 +177,6 @@ body {
 
     }
 
-
-
     .about-me-img {
         position: absolute;
         width: 200px;
@@ -133,15 +192,14 @@ body {
     background-position: +5% 0%;
 
     .deepflow {
-        opacity: 1;
         top: 25%;
+        opacity: 1;
     }
 
     .deepflow-box {
         position: absolute;
         height: 400px;
         width: 680px;
-        background-color: var(--clr-main);
         z-index: 2;
         left: 5%;
     }
@@ -150,8 +208,8 @@ body {
     .a,
     .i,
     .l {
-        opacity: 0;
         transform: translateY(-30%);
+        opacity: 0;
     }
 
     .d {
@@ -162,6 +220,11 @@ body {
 
 .text-container.ai {
     background-position: -5% 0%;
+
+    .ai-box {
+        width: 600px;
+        left: 50%;
+    }
 
     .i {
         left: 43.5%;
@@ -212,4 +275,50 @@ body {
     z-index: -2;
     opacity: 0;
     transition: all .5s ease-in-out;
+}
+
+
+
+
+@media only screen and (max-width: 412px) {
+    
+
+    .text-container {
+        .ai-box{
+            opacity: 0;
+        }
+
+        .name{
+            
+            left: 20%;
+            top: 40%;
+        }
+
+        .name,
+        .d,
+        .i,
+        .a {
+            position: absolute;
+            font-size: 200px;
+
+        }
+        .d{
+            left: 27%;
+            top: 40%;
+
+        }
+        .a{
+            top: 40%;
+            left: 105%;
+        }
+        .l{
+            top: 86.5%;
+            left: 145%;
+            transform: scale(120%);
+        }
+        .i{
+            left: 160%;
+            top: 64.5%;
+        }
+    }
 }
